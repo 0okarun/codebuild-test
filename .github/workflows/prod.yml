@@ -1,0 +1,23 @@
+name: Basic CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "hello world"
+  
+  Hello-World-Job:
+    runs-on:
+      - codebuild-devops-jenkins-to-ga-${{ github.run_id }}-${{ github.run_attempt }}
+    env:
+      ENV_VAR: "some value"
+      RANDOM: "${{ github.run_id }}"
+    steps:
+      - run: echo "Hello World! xxxx"
