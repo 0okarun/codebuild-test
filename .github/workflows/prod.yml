@@ -15,7 +15,7 @@ jobs:
   
   Hello-World-Job:
     runs-on:
-      - codebuild-wev2-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-ds-${{ github.run_id }}-${{ github.run_attempt }}
     env:
       ENV_VAR: "some value"
       RANDOM: "${{ github.run_id }}"
