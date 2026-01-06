@@ -13,15 +13,6 @@ jobs:
       - name: Say hello
         run: echo "hello world"
   
-  hi:
-    runs-on:
-      - codebuild-ds-${{ github.run_id }}-${{ github.run_attempt }}
-    env:
-      ENV_VAR: "some value"
-      RANDOM: "${{ github.run_id }}"
-    steps:
-      - run: echo "Hello World! hi!"
-  
   konnichiwa:
     runs-on:
       - codebuild-hostrunner-prod-${{ github.run_id }}-${{ github.run_attempt }}
